@@ -18,18 +18,18 @@ public class Main {
             while (scanner.hasNext()) {
                 var currentLine = scanner.nextLine();
 
-                var splittedInput = currentLine.split("[,-]");
+                var splitInput = currentLine.split("[,-]");
 
-                var firstStart = Integer.valueOf(splittedInput[0]);
-                var firstEnd = Integer.valueOf(splittedInput[1]);
-                var secondStart = Integer.valueOf(splittedInput[2]);
-                var secondEnd = Integer.valueOf(splittedInput[3]);
+                var firstStart = Integer.valueOf(splitInput[0]);
+                var firstEnd = Integer.valueOf(splitInput[1]);
+                var secondStart = Integer.valueOf(splitInput[2]);
+                var secondEnd = Integer.valueOf(splitInput[3]);
 
                 if (contains(firstStart, firstEnd, secondStart, secondEnd) || contains(secondStart, secondEnd, firstStart, firstEnd)){
                     assignmentPairs++;
                 }
 
-                if (ovelapped(firstStart, firstEnd, secondStart, secondEnd) || ovelapped(secondStart, secondEnd, firstStart, firstEnd)){
+                if (overLapped(firstStart, firstEnd, secondStart, secondEnd) || overLapped(secondStart, secondEnd, firstStart, firstEnd)){
                     overlappedAssignments++;
                 }
 
@@ -42,7 +42,7 @@ public class Main {
         System.out.println(overlappedAssignments);
     }
 
-    private static boolean ovelapped(Integer firstStart, Integer firstEnd, Integer secondStart, Integer secondEnd) {
+    private static boolean overLapped(Integer firstStart, Integer firstEnd, Integer secondStart, Integer secondEnd) {
         return !(firstEnd < secondStart || firstStart > secondEnd);
     }
 
