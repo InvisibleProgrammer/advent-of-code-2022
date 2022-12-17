@@ -24,7 +24,7 @@ public class Main {
         while (scanner.hasNext()) {
             String line = scanner.nextLine();
             System.out.println(line);
-            
+
             sumOfPriorities += getCurrentElfPriority(line);
 
             groupLines[groupCounter] = line;
